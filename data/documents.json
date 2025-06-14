@@ -1,0 +1,107 @@
+{
+  "documents": [
+    {
+      "id": "doc-1",
+      "title": "Examen de mathématiques - Terminale S",
+      "lastModified": "2023-05-06T14:30:00.000Z",
+      "tags": ["tag-1", "tag-2"],
+      "preview": "Examen portant sur les fonctions et les limites...",
+      "blocks": [
+        {
+          "id": "block-1",
+          "type": "heading",
+          "content": "Examen de mathématiques - Terminale S",
+          "level": 1
+        },
+        {
+          "id": "block-2",
+          "type": "paragraph",
+          "content": "Durée: 4 heures - Calculatrice autorisée"
+        },
+        {
+          "id": "block-3",
+          "type": "heading",
+          "content": "Exercice 1: Étude de fonction",
+          "level": 2
+        },
+        {
+          "id": "block-4",
+          "type": "paragraph",
+          "content": "Soit f la fonction définie sur R par f(x) = x² * e^(-x). Étudier les variations de cette fonction et déterminer ses extremums."
+        }
+      ]
+    },
+    {
+      "id": "doc-2",
+      "title": "Plan de cours - Histoire Géographie",
+      "lastModified": "2023-05-05T10:15:00.000Z",
+      "tags": ["tag-3", "tag-4"],
+      "preview": "Plan détaillé du cours sur la Seconde Guerre mondiale...",
+      "blocks": [
+        {
+          "id": "block-1",
+          "type": "heading",
+          "content": "Plan de cours - Histoire Géographie",
+          "level": 1
+        },
+        {
+          "id": "block-2",
+          "type": "heading",
+          "content": "La Seconde Guerre mondiale (1939-1945)",
+          "level": 2
+        },
+        {
+          "id": "block-3",
+          "type": "paragraph",
+          "content": "Ce cours vise à présenter les principales phases de la Seconde Guerre mondiale et ses conséquences sur l'ordre mondial."
+        }
+      ]
+    },
+    {
+      "id": "doc-3",
+      "title": "Fiche d'exercices - Physique Chimie",
+      "lastModified": "2023-05-03T16:45:00.000Z",
+      "tags": ["tag-5", "tag-6"],
+      "preview": "Série d'exercices sur les lois de Newton...",
+      "blocks": [
+        {
+          "id": "block-1",
+          "type": "heading",
+          "content": "Fiche d'exercices - Physique Chimie",
+          "level": 1
+        },
+        {
+          "id": "block-2",
+          "type": "heading",
+          "content": "Les lois de Newton",
+          "level": 2
+        },
+        {
+          "id": "block-3",
+          "type": "paragraph",
+          "content": "Cette fiche contient une série d'exercices sur les lois de Newton et leurs applications."
+        }
+      ]
+    },
+    {
+      "id": "doc-4",
+      "title": "Correction du devoir - Français",
+      "lastModified": "2023-04-30T09:20:00.000Z",
+      "tags": ["tag-7", "tag-8"],
+      "preview": "Correction détaillée du commentaire de texte...",
+      "blocks": [
+        {
+          "id": "block-1",
+          "type": "heading",
+          "content": "Correction du devoir - Français",
+          "level": 1
+        },
+        {
+          "id": "block-2",
+          "type": "paragraph",
+          "content": "Correction détaillée du commentaire de texte sur l'extrait de 'Madame Bovary' de Gustave Flaubert."
+        }
+      ]
+    }
+  ]
+}

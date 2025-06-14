@@ -1,0 +1,44 @@
+{
+  "tags": [
+    {
+      "id": "tag-1",
+      "name": "Mathématiques",
+      "color": "bg-blue-100 text-blue-800"
+    },
+    {
+      "id": "tag-2",
+      "name": "Examen",
+      "color": "bg-red-100 text-red-800"
+    },
+    {
+      "id": "tag-3",
+      "name": "Histoire",
+      "color": "bg-amber-100 text-amber-800"
+    },
+    {
+      "id": "tag-4",
+      "name": "Plan",
+      "color": "bg-green-100 text-green-800"
+    },
+    {
+      "id": "tag-5",
+      "name": "Physique",
+      "color": "bg-purple-100 text-purple-800"
+    },
+    {
+      "id": "tag-6",
+      "name": "Exercices",
+      "color": "bg-indigo-100 text-indigo-800"
+    },
+    {
+      "id": "tag-7",
+      "name": "Français",
+      "color": "bg-pink-100 text-pink-800"
+    },
+    {
+      "id": "tag-8",
+      "name": "Correction",
+      "color": "bg-orange-100 text-orange-800"
+    }
+  ]
+}

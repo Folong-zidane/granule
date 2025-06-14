@@ -1,0 +1,36 @@
+{
+  "activities": [
+    {
+      "id": "activity-1",
+      "action": "modification",
+      "documentId": "doc-1",
+      "documentTitle": "Examen de mathématiques",
+      "timestamp": "2023-05-06T14:30:00.000Z",
+      "user": "user-1"
+    },
+    {
+      "id": "activity-2",
+      "action": "creation",
+      "documentId": "doc-2",
+      "documentTitle": "Plan de cours - Histoire",
+      "timestamp": "2023-05-05T10:15:00.000Z",
+      "user": "user-1"
+    },
+    {
+      "id": "activity-3",
+      "action": "partage",
+      "documentId": "doc-3",
+      "documentTitle": "Fiche d'exercices - Physique",
+      "timestamp": "2023-05-03T16:45:00.000Z",
+      "user": "user-1"
+    },
+    {
+      "id": "activity-4",
+      "action": "telechargement",
+      "documentId": "doc-4",
+      "documentTitle": "Correction du devoir",
+      "timestamp": "2023-04-30T09:20:00.000Z",
+      "user": "user-1"
+    }
+  ]
+}
