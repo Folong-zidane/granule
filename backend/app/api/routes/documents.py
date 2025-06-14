@@ -4,6 +4,7 @@ import os
 import aiofiles
 from typing import List, Optional
 import uuid
+import tempfile
 from datetime import datetime
 
 from app.core.database import get_db
@@ -168,43 +169,58 @@ async def create_document(
     
     return Document(**dict(record))
 
+@router.post("/parse")
+async def parse_document(file: UploadFile = File(...)):
+    """Parse uploaded document"""
+    try:
+        # Create temporary file
+        with tempfile.NamedTemporaryFile(delete=False, suffix=f"_{file.filename}") as temp_file:
+            content = await file.read()
+            temp_file.write(content)
+            temp_file_path = temp_file.name
+        
+        # Parse document
+        result = document_parser.parse_document(temp_file_path)
+        
+        # Clean up
+        os.unlink(temp_file_path)
+        
+        return result
+    
+    except Exception as e:
+        return JSONResponse(
+            status_code=500,
+            content={"success": False, "error": str(e)}
+        )
+
 @router.get("/parse-test")
-async def test_parsing():
-    """Test des capacités de parsing disponibles"""
+async def test_parsing_capabilities():
+    """Test parsing capabilities"""
     capabilities = {
-        'pdfplumber': False,
-        'pypdf2': False,
-        'python_magic': False
+        "supported_formats": list(document_parser.supported_formats.keys()),
+        "libraries_available": {}
     }
     
+    # Test PDF libraries
     try:
         import pdfplumber
-        capabilities['pdfplumber'] = True
+        capabilities["libraries_available"]["pdfplumber"] = True
     except ImportError:
-        pass
+        capabilities["libraries_available"]["pdfplumber"] = False
     
     try:
         import PyPDF2
-        capabilities['pypdf2'] = True
+        capabilities["libraries_available"]["PyPDF2"] = True
     except ImportError:
-        pass
+        capabilities["libraries_available"]["PyPDF2"] = False
     
     try:
         import magic
-        capabilities['python_magic'] = True
+        capabilities["libraries_available"]["python-magic"] = True
     except ImportError:
-        pass
+        capabilities["libraries_available"]["python-magic"] = False
     
-    return {
-        'message': 'Test des capacités de parsing',
-        'capabilities': capabilities,
-        'supported_formats': [
-            'application/pdf',
-            'text/plain',
-            'application/json',
-            'text/csv'
-        ]
-    }
+    return capabilities
 
 @router.get("/{document_id}", response_model=DocumentResponse)
 async def get_document(document_id: str, db=Depends(get_db)):

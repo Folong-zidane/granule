@@ -9,6 +9,10 @@ from app.models.course import Course, CourseCreate, CourseUpdate, CourseWithProg
 
 router = APIRouter()
 
+@router.get("/test")
+async def courses_test():
+    return {"message": "Courses module loaded"}
+
 @router.post("/", response_model=Course)
 async def create_course(
     course: CourseCreate,

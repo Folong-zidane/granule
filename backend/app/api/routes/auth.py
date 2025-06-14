@@ -129,3 +129,7 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends(), session = Depe
 @router.get("/me", response_model=User)
 async def read_users_me(current_user: dict = Depends(get_current_user)):
     return User(**current_user)
+
+@router.get("/test")
+async def auth_test():
+    return {"message": "Auth module loaded"}

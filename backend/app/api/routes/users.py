@@ -7,6 +7,10 @@ from app.models.user import User, UserUpdate
 
 router = APIRouter()
 
+@router.get("/test")
+async def users_test():
+    return {"message": "Users module loaded"}
+
 @router.get("/", response_model=List[User])
 async def get_users(
     current_user: dict = Depends(get_current_user),

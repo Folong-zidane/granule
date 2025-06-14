@@ -4,30 +4,26 @@ import os
 
 class Settings(BaseSettings):
     # Database
-    NEO4J_URI: str = "bolt://localhost:7687"
-    NEO4J_USER: str = "neo4j"
-    NEO4J_PASSWORD: str = "password123"
+    neo4j_uri: str = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+    neo4j_user: str = os.getenv("NEO4J_USER", "neo4j")
+    neo4j_password: str = os.getenv("NEO4J_PASSWORD", "password")
     
     # Security
-    SECRET_KEY: str = "your-super-secret-key-change-this-in-production"
-    ALGORITHM: str = "HS256"
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
+    secret_key: str = os.getenv("SECRET_KEY", "your-secret-key-change-this")
+    algorithm: str = os.getenv("ALGORITHM", "HS256")
+    access_token_expire_minutes: int = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "30"))
     
     # CORS
-    ALLOWED_HOSTS: List[str] = ["http://localhost:3000", "http://localhost:3001"]
+    allowed_hosts: List[str] = ["http://localhost:3000", "https://v0-studteach.vercel.app"]
     
     # File Upload
-    UPLOAD_DIR: str = "uploads"
-    MAX_FILE_SIZE: int = 10485760  # 10MB
-    ALLOWED_EXTENSIONS: List[str] = [".pdf", ".docx", ".doc", ".txt", ".png", ".jpg", ".jpeg"]
-    
-    # External Services
-    REDIS_URL: str = "redis://localhost:6379"
+    upload_dir: str = os.getenv("UPLOAD_DIR", "uploads")
+    max_file_size: int = int(os.getenv("MAX_FILE_SIZE", "10485760"))  # 10MB
     
     # Environment
-    ENVIRONMENT: str = "development"
-    DEBUG: bool = True
-
+    environment: str = os.getenv("ENVIRONMENT", "development")
+    debug: bool = os.getenv("DEBUG", "false").lower() == "true"
+    
     class Config:
         env_file = ".env"
 
