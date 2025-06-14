@@ -95,4 +95,3 @@ Voir le fichier `docs/DEPLOY_RENDER.md` pour les instructions détaillées.
 
 MIT License
 \`\`\`
-# granule

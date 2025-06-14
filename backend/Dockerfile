@@ -1,8 +1,8 @@
-FROM python:3.9-slim
+FROM python:3.11-slim
 
 WORKDIR /app
 
-# Install system dependencies
+# Install system dependencies (lighter approach)
 RUN apt-get update && apt-get install -y \
     gcc \
     g++ \
