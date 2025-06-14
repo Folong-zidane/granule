@@ -13,9 +13,13 @@ class Settings(BaseSettings):
     algorithm: str = os.getenv("ALGORITHM", "HS256")
     access_token_expire_minutes: int = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "30"))
     
-    # CORS
-    allowed_hosts: List[str] = ["http://localhost:3000", "https://v0-studteach.vercel.app"]
-    
+    # CORSapp.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Au lieu de votre liste spécifique
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+
     # File Upload
     upload_dir: str = os.getenv("UPLOAD_DIR", "uploads")
     max_file_size: int = int(os.getenv("MAX_FILE_SIZE", "10485760"))  # 10MB
